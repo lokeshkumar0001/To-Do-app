@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const favicon = require("serve-favicon");
 const _ = require("lodash");
 
 const app = express();
@@ -9,6 +10,7 @@ app.set("view engine","ejs");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+app.use(favicon(__dirname+ "/public/image/favicon.ico"));
 
 mongoose.connect("mongodb+srv://admin-lokesh:Test123@cluster0.qunef.mongodb.net/todolistDB")
 
